@@ -11,13 +11,6 @@ class Form extends React.Component {
     this.setState({ value: event.target.value });
   }
 
-//   handleSubmit(event) {
-//     event.preventDefault();
-//     console.log(this.props, "props");
-//     const { value } = this.state;
-//     addToFavoritePlayers(value);
-//   }
-
   render() {
     const { value } = this.state;
     const { addToFavoritePlayers } = this.props;
@@ -28,7 +21,7 @@ class Form extends React.Component {
           Enter Your Favorite Baseball Players Name:
           <input type="text" value={value} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Add To List" />
       </form>
     );
   }
