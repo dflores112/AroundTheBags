@@ -1,14 +1,13 @@
 import React from 'react';
-import axios from 'axios';
 import Form from './form.jsx';
 import PlayerList from './playerList.jsx';
-import Styled from './Styled.jsx';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = { favoritePlayers: [] };
     this.addToFavoritePlayers = this.addToFavoritePlayers.bind(this);
+    this.removePlayer = this.removePlayer.bind(this);
   }
 
   componentDidMount() {
@@ -21,10 +20,24 @@ class App extends React.Component {
     event.preventDefault();
     const { favoritePlayers } = this.state;
     favoritePlayers.push(player);
-    const toSave = JSON.stringify(favoritePlayers);
-    localStorage.setItem('favoritePlayers', toSave);
+    this.updateLS(favoritePlayers);
     const newFavoritePlayers = [...favoritePlayers];
     this.setState({ favoritePlayers: newFavoritePlayers });
+  }
+
+  updateLS(favoritePlayers) {
+    const toSave = JSON.stringify(favoritePlayers);
+    localStorage.setItem('favoritePlayers', toSave);
+  }
+
+  removePlayer(player) {
+    const { favoritePlayers } = this.state;
+    function checkPlayers(p) {
+      return p !== player;
+    }
+    const newPlayers = favoritePlayers.filter(checkPlayers);
+    this.setState({ favoritePlayers: newPlayers });
+    this.updateLS(newPlayers);
   }
 
   render() {
@@ -33,9 +46,9 @@ class App extends React.Component {
       <div>
         <h1>Favorite Baseball Players List</h1>
         <Form addToFavoritePlayers={this.addToFavoritePlayers} />
-        <Styled.PlayerContainer>
-          <PlayerList playerList={favoritePlayers} />
-        </Styled.PlayerContainer>
+        <div>
+          <PlayerList playerList={favoritePlayers} removePlayer={this.removePlayer} />
+        </div>
       </div>
     );
   }
