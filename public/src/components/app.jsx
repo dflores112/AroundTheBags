@@ -1,6 +1,7 @@
 import React from 'react';
-import Form from './form.jsx';
-import PlayerList from './playerList.jsx';
+import Form from './Form.jsx';
+import PlayerList from './PlayerList.jsx';
+import { updateLS } from '../jsFuncs.js';
 
 class App extends React.Component {
   constructor() {
@@ -20,14 +21,9 @@ class App extends React.Component {
     event.preventDefault();
     const { favoritePlayers } = this.state;
     favoritePlayers.push(player);
-    this.updateLS(favoritePlayers);
+    updateLS(favoritePlayers);
     const newFavoritePlayers = [...favoritePlayers];
     this.setState({ favoritePlayers: newFavoritePlayers });
-  }
-
-  updateLS(favoritePlayers) {
-    const toSave = JSON.stringify(favoritePlayers);
-    localStorage.setItem('favoritePlayers', toSave);
   }
 
   removePlayer(player) {
@@ -37,7 +33,7 @@ class App extends React.Component {
     }
     const newPlayers = favoritePlayers.filter(checkPlayers);
     this.setState({ favoritePlayers: newPlayers });
-    this.updateLS(newPlayers);
+    updateLS(newPlayers);
   }
 
   render() {

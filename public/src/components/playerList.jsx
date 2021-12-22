@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayerComponent from './playerComponent.jsx';
+import PlayerComponent from './PlayerComponent.jsx';
 
 const PlayerList = function (props) {
   const { playerList, removePlayer } = props;
