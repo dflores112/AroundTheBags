@@ -21,9 +21,9 @@ class Form extends React.Component {
       <Styled.Form onSubmit={(event) => addToFavoritePlayers(event, value)}>
         <Styled.Label htmlFor="submit-btn">
           Enter Your Favorite Baseball Players Name:
-          <input type="text" value={value} onChange={this.handleChange} />
+          <Styled.InputForm type="text" value={value} onChange={this.handleChange} required />
         </Styled.Label>
-        <Styled.Input type="submit" value="Add To List" />
+        <Styled.InputButton type="submit" value="Add To List" />
       </Styled.Form>
     );
   }

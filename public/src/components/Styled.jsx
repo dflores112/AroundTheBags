@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Input = styled.input`
+const InputButton = styled.input`
   font-size: 1em;
   border-radius: 0.75rem;
   background-color: #6d59a8;
@@ -17,6 +17,10 @@ const Input = styled.input`
     top: -10px;
     cursor:pointer;
   }
+`;
+
+const InputForm = styled.input`
+outline: none;
 `;
 
 const Form = styled.form`
@@ -38,6 +42,7 @@ const Label = styled.label`
   padding: 0 10px;
 `;
 
+
 const Container = styled.div`
   border:1px solid orange;
   text-align: center;
@@ -48,7 +53,7 @@ const Container = styled.div`
   color:white;
 `;
 
-Input.defaultProps = {
+InputButton.defaultProps = {
   theme: {
     main: '#6d59a8',
   },
@@ -59,6 +64,6 @@ const theme = {
 };
 
 const styles = {
-  Input, theme, Container, Title, Form, Label,
+  InputButton, InputForm, theme, Container, Title, Form, Label,
 };
 export { styles as default };
