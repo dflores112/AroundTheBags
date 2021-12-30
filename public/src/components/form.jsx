@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Styles from './Styled.jsx';
 
 class Form extends React.Component {
   constructor(props) {
@@ -14,17 +16,20 @@ class Form extends React.Component {
   render() {
     const { value } = this.state;
     const { addToFavoritePlayers } = this.props;
-
     return (
       <form onSubmit={(event) => addToFavoritePlayers(event, value)}>
-        <label>
+        <label htmlFor="submit-btn">
           Enter Your Favorite Baseball Players Name:
           <input type="text" value={value} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Add To List" />
+        <Styles.Input type="submit" value="Add To List" />
       </form>
     );
   }
 }
+
+Form.propTypes = {
+  addToFavoritePlayers: PropTypes.func.isRequired,
+};
 
 export default Form;

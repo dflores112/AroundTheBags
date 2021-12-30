@@ -1,6 +1,7 @@
+import propTypes from 'prop-types';
 import React from 'react';
 
-const PlayerComponent = function (props) {
+function PlayerComponent(props) {
   const { name, removePlayer } = props;
   return (
     <div>
@@ -13,6 +14,11 @@ const PlayerComponent = function (props) {
       </button>
     </div>
   );
+}
+
+PlayerComponent.propTypes = {
+  name: propTypes.string.isRequired,
+  removePlayer: propTypes.func.isRequired,
 };
 
 export default PlayerComponent;

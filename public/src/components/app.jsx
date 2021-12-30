@@ -1,6 +1,9 @@
 import React from 'react';
+// eslint-disable-next-line import/extensions
 import Form from './Form.jsx';
+// eslint-disable-next-line import/extensions
 import PlayerList from './PlayerList.jsx';
+// eslint-disable-next-line import/extensions
 import { updateLS } from '../jsFuncs.js';
 
 class App extends React.Component {
@@ -40,8 +43,12 @@ class App extends React.Component {
     const { favoritePlayers } = this.state;
     return (
       <div>
-        <h1>Favorite Baseball Players List</h1>
-        <Form addToFavoritePlayers={this.addToFavoritePlayers} />
+        <div>
+          <h1>Favorite Baseball Players List</h1>
+        </div>
+        <div>
+          <Form addToFavoritePlayers={this.addToFavoritePlayers} />
+        </div>
         <div>
           <PlayerList playerList={favoritePlayers} removePlayer={this.removePlayer} />
         </div>
