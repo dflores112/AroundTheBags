@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Styles from './Styled.jsx';
+// eslint-disable-next-line import/extensions
+import Styled from './Styled.jsx';
 
 class Form extends React.Component {
   constructor(props) {
@@ -17,13 +18,13 @@ class Form extends React.Component {
     const { value } = this.state;
     const { addToFavoritePlayers } = this.props;
     return (
-      <form onSubmit={(event) => addToFavoritePlayers(event, value)}>
-        <label htmlFor="submit-btn">
+      <Styled.Form onSubmit={(event) => addToFavoritePlayers(event, value)}>
+        <Styled.Label htmlFor="submit-btn">
           Enter Your Favorite Baseball Players Name:
           <input type="text" value={value} onChange={this.handleChange} />
-        </label>
-        <Styles.Input type="submit" value="Add To List" />
-      </form>
+        </Styled.Label>
+        <Styled.Input type="submit" value="Add To List" />
+      </Styled.Form>
     );
   }
 }

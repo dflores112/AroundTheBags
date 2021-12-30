@@ -5,6 +5,8 @@ import Form from './Form.jsx';
 import PlayerList from './PlayerList.jsx';
 // eslint-disable-next-line import/extensions
 import { updateLS } from '../jsFuncs.js';
+// eslint-disable-next-line import/extensions
+import Styled from './Styled.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -42,9 +44,9 @@ class App extends React.Component {
   render() {
     const { favoritePlayers } = this.state;
     return (
-      <div>
+      <Styled.Container>
         <div>
-          <h1>Favorite Baseball Players List</h1>
+          <Styled.Title>Favorite Baseball Players List</Styled.Title>
         </div>
         <div>
           <Form addToFavoritePlayers={this.addToFavoritePlayers} />
@@ -52,7 +54,7 @@ class App extends React.Component {
         <div>
           <PlayerList playerList={favoritePlayers} removePlayer={this.removePlayer} />
         </div>
-      </div>
+      </Styled.Container>
     );
   }
 }
