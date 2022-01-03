@@ -2,7 +2,7 @@ const path = require('path');
 
 
 module.exports = {
-  entry: './public/src/index.jsx',
+  entry: './public/src/App.jsx',
   mode: 'development',
   module: {
     rules: [

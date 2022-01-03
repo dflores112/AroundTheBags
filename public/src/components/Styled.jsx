@@ -42,7 +42,6 @@ const Label = styled.label`
   padding: 0 10px;
 `;
 
-
 const Container = styled.div`
   border:1px solid orange;
   text-align: center;
@@ -66,4 +65,5 @@ const theme = {
 const styles = {
   InputButton, InputForm, theme, Container, Title, Form, Label,
 };
-export { styles as default };
+
+export {styles as default };
