@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+const theme = {
+  main: '#6d59a8',
+};
+
 const InputButton = styled.input`
   font-size: 1em;
   border-radius: 0.75rem;
@@ -19,27 +23,19 @@ const InputButton = styled.input`
   }
 `;
 
-const InputForm = styled.input`
-outline: none;
-`;
-
-const Form = styled.form`
-  border:1px solid green;
-  display:flex;
-  justify-content: center;
-  padding: 15px;
-`;
+InputButton.defaultProps = {
+  theme: {
+    main: '#6d59a8',
+  },
+};
 
 const Title = styled.h1`
   border:1px solid blue;
   text-align: center;
-`;
-
-const Label = styled.label`
-  border:1px solid purple;
-  position:relative;
-  top: 10px;
-  padding: 0 10px;
+  font-size:4.25rem;
+  line-height: 1;
+  width:65%;
+  margin: auto;
 `;
 
 const Container = styled.div`
@@ -52,18 +48,8 @@ const Container = styled.div`
   color:white;
 `;
 
-InputButton.defaultProps = {
-  theme: {
-    main: '#6d59a8',
-  },
-};
-
-const theme = {
-  main: '#6d59a8',
-};
-
 const styles = {
-  InputButton, InputForm, theme, Container, Title, Form, Label,
+  Container, Title,
 };
 
 export {styles as default };
