@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-const theme = {
-  main: '#6d59a8',
-};
-
 const InputButton = styled.input`
   font-size: 1em;
   border-radius: 0.75rem;
@@ -23,12 +19,6 @@ const InputButton = styled.input`
   }
 `;
 
-InputButton.defaultProps = {
-  theme: {
-    main: '#6d59a8',
-  },
-};
-
 const Title = styled.h1`
   border:1px solid blue;
   text-align: center;
@@ -39,17 +29,42 @@ const Title = styled.h1`
 `;
 
 const Container = styled.div`
-  border:1px solid orange;
+  border:2px solid green;
   text-align: center;
+  letter-spacing: -.025em;
   padding:10px;
   font-family: system-ui,-apple-system;
   font-weight: 600;
-  background-color: #23252f;
+  background-color: #323542;
+  
   color:white;
+  height: 90%;
+`;
+
+const NavBarContainer = styled.div`
+ border:2px solid yellow;
+ padding:10px;
+ display:flex;
+ justify-content: right;
+`;
+
+const NavItem = styled.button`
+background-color: #323542;
+border-radius: 10px;
+border:none;
+color:white;
+font-weight: 600;
+margin: 12px;
+padding: 10px;
+font-size: 16px;
+&:hover {
+  cursor:pointer;
+  background-color: #1A1C23;
+}
 `;
 
 const styles = {
-  Container, Title,
+  Container, Title, NavBarContainer, NavItem,
 };
 
 export {styles as default };
